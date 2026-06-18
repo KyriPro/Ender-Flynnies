@@ -1,0 +1,14 @@
+LEVEL CODES:
+0 = Air
+1 = Wall
+2 = Telestop
+3 = Lever
+4 = Lock
+5 = Reset Latch
+6 = Reverse Lock
+7 = Reverse Reset Latch
+8 = Path (Deco)
+9 = Spikes (Bottom)
+10 = Spikes (Top)
+11 = Spikes (Left)
+12 = Spikes (Right)

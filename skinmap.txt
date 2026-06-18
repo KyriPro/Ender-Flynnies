@@ -1,0 +1,8 @@
+0 = Flynn
+1 = Flipped Flynn
+2 = Angry Flynn
+3 = Cool Flynn
+4 = Birthday Flynn
+5 = Sock Flynn
+6 = Real Flynn
+7 = Glungus

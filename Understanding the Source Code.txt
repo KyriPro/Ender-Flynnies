@@ -1,0 +1,58 @@
+Contents:
+- 1.0: Entities and static objects
+- 2.0: Modifying the configurations file
+- 3.0: Level codes
+
+1.0: Entities and static objects:
+
+The game is split up in 2 catagories each with different physics:
+- Static Objects / Blocks
+- Entities
+
+What is a Static Object:
+
+A static object is defined as a block (Air, Wall, TeleStop, Lever, Lock, etc.)
+Static objects can be placed at multiple positions and get rendered first, they contain simple logic like stopping entities and manipulating other static objects.
+Static objects rely on global variables to define how they should behave and look, these are shared across all static objects that have the same Object Code (OC)
+
+What is an Entitiy:
+
+An entitiy (Player, Flag, Mouse, etc.) is defined as a unique gameplay element (UGE) and can not manipulate static objects.
+They have their own logic and tilesystem and have full control over inputs and other entities.
+Unlike Static Objects, these have one unique hardcoded position per level (OUHPPL) and can be placed once.
+Entities can check level spaces using the Universal Tilesystem for Ender Flynnies (UTE) and set code exception flags (CEF) that are handled using cutscenes
+
+
+2.0: Modifying the configurations file:
+
+The config file is located in %GAME_PATH%\config.txt
+This file stores all settings for the game, including Dark Mode, New TeleStop Textures, and options for muting channels
+All configurations are split by a pipe ('|'), so the config file should look like this:
+True|False|True|True|False
+These values are decoded using the python split function
+
+Values can also be an integer, please note that these values have no limit unlike in the Ender Flynnies Control Panel (EFCP)
+
+If not required, please don't modify the config file
+
+
+If you delete the config file all settings will return to default and the game will create a new configurations file
+
+DO NOT MOVE THE CONFIGURATIONS FILE IT WILL RESET ALL SETTINGS
+
+
+3.0: Level codes:
+
+The level codes are:
+
+0: Air - No objects have effects on this block.
+1: Wall - All entities stop but pearl can move through.
+2: TeleStop - Nothing can go through, pearl also stops.
+3: Lever - Levers can be toggled by pressing enter (return) when the player is standing on it, this block is not solid.
+4: Lock - Dissappears when the lever is activated.
+5: Reset Latch - When stepped on by the player, resets all levers to off, this block is not solid.
+6: Reverse Lever - Appears when lever is activated.
+7: Reverse Reset Latch - When Stepped on by the player, sets all levers to on, this block is not solid.
+8: Path - This is a decoration and acts like a background tile
+
+Copyright KyriWorks Inc. 2023 - 2026, do not modify any source code.
